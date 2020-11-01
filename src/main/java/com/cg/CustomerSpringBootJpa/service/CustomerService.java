@@ -1,5 +1,7 @@
 package com.cg.CustomerSpringBootJpa.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,12 @@ public class CustomerService implements ICustomerService{
 	{
 		Customer customer=repo.findById(id);
 		return repo.showCustomer(customer);
+	}
+	@Override
+	public List<Customer> findAll()
+	{
+		List<Customer> customer=repo.findAll();
+		return customer;
 	}
 	
 

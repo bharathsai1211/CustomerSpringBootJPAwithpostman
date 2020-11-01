@@ -1,5 +1,7 @@
 package com.cg.CustomerSpringBootJpa.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,6 +57,10 @@ public class CustomerController {
 		Customer customer=service.byId(id);
 		return customer;
 	}
-	
-
+	@GetMapping("/showcustomers")
+	public List<Customer> allCustomer()
+	{
+		List<Customer> customer=service.findAll();
+		return customer;
+	}
 }
